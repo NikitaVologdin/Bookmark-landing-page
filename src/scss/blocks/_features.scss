@@ -1,0 +1,8 @@
+@use "../abstractions/media";
+.features {
+    margin-top: 146px;
+
+    @include media.tablet-above {
+        margin-top: 210px;
+    }
+}

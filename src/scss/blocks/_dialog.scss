@@ -1,0 +1,82 @@
+@use "../abstractions/mixins";
+@use "../abstractions/functions";
+
+.dialog {
+    position: absolute;
+    display: grid;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: var(--very-dark-blue);
+    opacity: 0.95;
+    padding-inline: 32px;
+    padding-block: 7px 38px;
+}
+
+.dialog__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialog__close {
+    @include mixins.reset-button;
+    cursor: pointer;
+    padding: 15px;
+    position: relative;
+    right: -15px;
+}
+
+.dialog .nav__list {
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 0;
+}
+
+.dialog .nav__item {
+    @include mixins.flex-center();
+    width: 100%;
+    margin-bottom: 24px;
+    padding-block: 25px;
+    border-top: 1px solid var(--grayish-glue);
+    &:last-child {
+        border-bottom: 1px solid var(--grayish-glue);
+    }
+}
+
+.dialog .nav__link {
+    font-size: functions.rem(20);
+    line-height: functions.rem(17);
+    letter-spacing: functions.rem(2.31);
+    color: var(--white);
+}
+
+.dialog .nav__list li {
+    &:last-child {
+        width: 100%;
+    }
+}
+
+.dialog .nav__login {
+    width: 100%;
+    border-color: var(--white);
+    background-color: transparent;
+    padding-block: 16px;
+    font-size: functions.rem(20);
+    line-height: functions.rem(17);
+    letter-spacing: functions.rem(2.31);
+    color: var(--white);
+    height: 100%;
+}
+
+.dialog .social__list {
+    display: flex;
+    justify-self: center;
+    align-self: flex-end;
+}
+
+.dialog .social__item path {
+    fill: var(--white);
+}

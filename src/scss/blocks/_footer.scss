@@ -1,0 +1,88 @@
+@use "../abstractions/media";
+@use "../abstractions/functions";
+@use "../abstractions/mixins";
+
+.footer {
+    width: 100vw;
+    max-width: 1440px;
+}
+
+.links-section {
+    width: 100vw;
+    max-width: 1440px;
+    position: absolute;
+    bottom: -861px;
+    background-color: var(--very-dark-blue);
+    padding-block: 40px 43px;
+
+    @include media.tablet-above {
+        bottom: -592px;
+        padding: 18px 0;
+    }
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    color: var(--white);
+    align-items: center;
+
+    @include media.tablet-above {
+        flex-direction: row;
+    }
+}
+
+.footer-nav__logo {
+    @include media.tablet-above {
+        margin-right: 64px;
+    }
+}
+
+.footer-nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 39px;
+    margin-bottom: 48px;
+
+    @include media.tablet-above {
+        gap: 44px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        flex-direction: row;
+    }
+}
+
+.footer-nav__item {
+    text-align: center;
+}
+
+.footer-nav__link {
+    text-transform: uppercase;
+    font-size: functions.rem(15);
+    line-height: functions.rem(17);
+    letter-spacing: functions.rem(1.73);
+    transition: color var(--transition-duration) ease;
+
+    @include media.tablet-above {
+        font-size: functions.rem(13);
+        letter-spacing: functions.rem(1.5);
+    }
+
+    &:hover {
+        color: var(--soft-red);
+    }
+}
+
+.footer-nav .social__list {
+    @include media.tablet-above {
+        margin-left: auto;
+    }
+}
+
+.footer-nav .social__item:hover .social__icon path {
+    fill: var(--soft-red);
+}

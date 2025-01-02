@@ -1,0 +1,10 @@
+@use "../abstractions/functions";
+@use "../abstractions/mixins";
+@use "../abstractions/media";
+
+.faq {
+    margin-top: 140px;
+    @include media.tablet-above {
+        margin-top: 164px;
+    }
+}

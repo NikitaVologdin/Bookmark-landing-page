@@ -1,0 +1,29 @@
+@use "../abstractions/functions";
+@use "../abstractions/media";
+@use "../abstractions/mixins";
+
+.section__header {
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.section__title {
+    text-align: center;
+    font-weight: 500;
+    line-height: functions.rem(30);
+    letter-spacing: functions.rem(-0.08);
+    @include mixins.fluid-text(32, 24);
+    color: var(--very-dark-blue);
+}
+
+.section__description {
+    text-align: center;
+    color: var(--grayish-glue);
+    @include mixins.fluid-text(18, 15);
+    line-height: functions.rem(25);
+    margin-top: 12px;
+
+    @include media.tablet-above {
+        margin-top: 35px;
+    }
+}

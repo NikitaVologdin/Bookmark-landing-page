@@ -1,0 +1,32 @@
+@use "../abstractions/media";
+@use "../abstractions/mixins";
+
+html {
+    overflow-x: hidden;
+    &:has(.dialog[open]) {
+        overflow: hidden;
+    }
+}
+
+body {
+    font-size: var(--root-font-size);
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    color: var(--greyish-blue);
+    background-color: #ffffff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

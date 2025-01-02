@@ -1,0 +1,38 @@
+@use "../abstractions/functions";
+@use "../abstractions/mixins";
+
+.link-button {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: var(--soft-blue);
+    border-radius: 5px;
+    border: 2px solid var(--soft-blue);
+    font-size: functions.rem(14);
+    line-height: functions.rem(28);
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+        background-color var(--transition-duration) ease,
+        color var(--transition-duration) ease;
+    color: var(--white);
+    @include mixins.reset-link;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--soft-blue);
+    }
+
+    &_grey {
+        border-color: transparent;
+        background-color: #f7f7f7;
+        color: #242a45bf;
+        transition:
+            border-color var(--transition-duration) ease,
+            color var(--transition-duration) ease;
+
+        &:hover {
+            border-color: #5b6074;
+            color: #5b6074;
+        }
+    }
+}

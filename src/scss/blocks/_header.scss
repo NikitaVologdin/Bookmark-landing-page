@@ -1,0 +1,13 @@
+@use "../abstractions/media";
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+
+    @include media.tablet-above {
+        margin-top: 48px;
+    }
+}
