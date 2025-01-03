@@ -47,27 +47,29 @@ export default function ContactForm({ amount }: props) {
               id="email"
               placeholder="example@email.com"
               aria-required="true"
-              aria-describedby={emailError ? "email-error" : ""}
+              aria-describedby="email-error"
               aria-invalid={emailError}
               autoComplete="email"
               name="email"
             />
             <AnimatePresence initial={false}>
-              {emailError && (
-                <motion.span
-                  className="contact__error"
-                  id="email-error"
-                  initial={{ opacity: 0, bottom: 0 }}
-                  animate={{
-                    opacity: 1,
-                    bottom: windowDimensions.width < 768 ? -25 : -36,
-                  }}
-                  exit={{ opacity: 0, bottom: 0 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <i>Whoops, make sure it’s an email</i>
-                </motion.span>
-              )}
+              <div id="email-error">
+                {emailError && (
+                  <motion.span
+                    className="contact__error"
+                    id="email-error"
+                    initial={{ opacity: 0, bottom: 0 }}
+                    animate={{
+                      opacity: 1,
+                      bottom: windowDimensions.width < 768 ? -25 : -36,
+                    }}
+                    exit={{ opacity: 0, bottom: 0 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <i>Whoops, make sure it’s an email</i>
+                  </motion.span>
+                )}
+              </div>
             </AnimatePresence>
           </div>
           <button className="contact__submit">Contact us</button>
