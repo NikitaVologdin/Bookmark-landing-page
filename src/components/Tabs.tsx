@@ -56,34 +56,40 @@ export default function Tabs({ content }: props) {
       </header>
       <div className="tabs__content">
         <AnimatePresence>
-          <motion.div
-            className="tabs__article"
-            aria-labelledby={"panel" + activeTab}
-            hidden={false}
-            role="tabpanel"
-            key={content[activeTab].heading}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0 }}
-          >
-            <div className="tabs__img-container">
-              <img
-                className="tabs__img"
-                width={311}
-                height={201}
-                src={content[activeTab].image}
-                alt={content[activeTab].alt}
-              />
-            </div>
-            <div className="tabs__article-content">
-              <h3 className="tabs__heading">{content[activeTab].heading}</h3>
-              <p className="tabs__paragraph">{content[activeTab].paragraph}</p>
-              <LinkButton className="tabs__article-button" href="">
-                More Info
-              </LinkButton>
-            </div>
-          </motion.div>
+          {content.map((item, index) => {
+            return (
+              <motion.div
+                className={`tabs__article ${
+                  activeTab === index ? "" : "tabs__article_hidden"
+                }`}
+                aria-labelledby={"panel" + index}
+                hidden={false}
+                role="tabpanel"
+                key={item.heading}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0 }}
+              >
+                <div className="tabs__img-container">
+                  <img
+                    className="tabs__img"
+                    width={311}
+                    height={201}
+                    src={item.image}
+                    alt={item.alt}
+                  />
+                </div>
+                <div className="tabs__article-content">
+                  <h3 className="tabs__heading">{item.heading}</h3>
+                  <p className="tabs__paragraph">{item.paragraph}</p>
+                  <LinkButton className="tabs__article-button" href="">
+                    More Info
+                  </LinkButton>
+                </div>
+              </motion.div>
+            );
+          })}
         </AnimatePresence>
       </div>
     </div>
