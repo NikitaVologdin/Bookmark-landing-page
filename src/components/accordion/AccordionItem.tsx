@@ -17,7 +17,7 @@ export default function AccordionItem({ question, answer, index }: props) {
 
   return (
     <div className="accordion__item">
-      <h5 className="accordion__question">
+      <h4 className="accordion__question">
         <button
           type="button"
           aria-expanded={isExpanded}
@@ -29,7 +29,7 @@ export default function AccordionItem({ question, answer, index }: props) {
           <span className="accordion__title">{question}</span>
           <AccordionExpandIcon isExpanded={isExpanded} />
         </button>
-      </h5>
+      </h4>
       <AnimatePresence initial={false}>
         {isExpanded && (
           <motion.article
