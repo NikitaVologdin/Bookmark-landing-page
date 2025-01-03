@@ -47,9 +47,9 @@ export default function ContactForm({ amount }: props) {
               id="email"
               placeholder="example@email.com"
               aria-required="true"
-              aria-describedby="email-error"
+              aria-describedby={emailError ? "email-error" : ""}
               aria-invalid={emailError}
-              autoComplete="true"
+              autoComplete="email"
               name="email"
             />
             <AnimatePresence initial={false}>
