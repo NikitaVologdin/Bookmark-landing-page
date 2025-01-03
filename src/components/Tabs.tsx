@@ -29,8 +29,9 @@ export default function Tabs({ content }: props) {
                 className={`tabs__item tabs__button ${activeClass}`}
                 key={item.title}
                 role="tab"
+                id={"panel" + index}
                 aria-selected={activeTab === index}
-                aria-controls={"panel" + index}
+                aria-controls={"tabpanel" + index}
                 onClick={() => setActiveTab(index)}
               >
                 {item.title}
@@ -59,6 +60,7 @@ export default function Tabs({ content }: props) {
                   activeTab === index ? "" : "tabs__article_hidden"
                 }`}
                 aria-labelledby={"panel" + index}
+                id={"tabpanel" + index}
                 hidden={false}
                 role="tabpanel"
                 key={item.heading}
