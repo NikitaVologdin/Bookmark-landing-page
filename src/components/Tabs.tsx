@@ -25,12 +25,15 @@ export default function Tabs({ content }: props) {
             const isActive = activeTab === index;
             const activeClass = isActive ? "tabs__item_active" : "";
             return (
-              <li className={`tabs__item ${activeClass}`} key={item.title}>
+              <li
+                className={`tabs__item ${activeClass}`}
+                key={item.title}
+                role="tab"
+              >
                 <button
                   className="tabs__button"
                   aria-selected={activeTab === index}
-                  aria-controls={`panel + ${index}`}
-                  role="tab"
+                  aria-controls={"panel" + index}
                   onClick={() => setActiveTab(index)}
                 >
                   {item.title}
@@ -55,7 +58,7 @@ export default function Tabs({ content }: props) {
         <AnimatePresence>
           <motion.article
             className="tabs__article"
-            aria-labelledby={`panel + ${activeTab}`}
+            aria-labelledby={"panel" + activeTab}
             hidden={false}
             role="tabpanel"
             key={content[activeTab].heading}
