@@ -34,16 +34,15 @@ export default function Tabs({ content }: props) {
                 onClick={() => setActiveTab(index)}
               >
                 {item.title}
-
                 <AnimatePresence>
                   {isActive && (
-                    <motion.div
+                    <motion.span
                       className="tabs__item_border"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                    ></motion.div>
+                    ></motion.span>
                   )}
                 </AnimatePresence>
               </button>
