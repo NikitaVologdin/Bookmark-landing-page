@@ -29,10 +29,10 @@ export default function Tabs({ content }: props) {
                 className={`tabs__item ${activeClass}`}
                 key={item.title}
                 role="tab"
+                aria-selected={activeTab === index}
               >
                 <button
                   className="tabs__button"
-                  aria-selected={activeTab === index}
                   aria-controls={"panel" + index}
                   onClick={() => setActiveTab(index)}
                 >
