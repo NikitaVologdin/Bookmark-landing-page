@@ -75,6 +75,10 @@
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
 
+    &_hidden {
+        display: none;
+    }
+
     @include media.tablet-above {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
@@ -99,7 +103,7 @@
         border-bottom-right-radius: 11% 25%;
         z-index: 0;
         top: 16%;
-        right: 13%;
+        right: 37%;
     }
     @include media.mobile-above {
         height: 44vw;
