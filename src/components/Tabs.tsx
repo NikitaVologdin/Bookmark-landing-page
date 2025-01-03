@@ -56,7 +56,7 @@ export default function Tabs({ content }: props) {
       </header>
       <div className="tabs__content">
         <AnimatePresence>
-          <motion.article
+          <motion.div
             className="tabs__article"
             aria-labelledby={"panel" + activeTab}
             hidden={false}
@@ -83,7 +83,7 @@ export default function Tabs({ content }: props) {
                 More Info
               </LinkButton>
             </div>
-          </motion.article>
+          </motion.div>
         </AnimatePresence>
       </div>
     </div>
