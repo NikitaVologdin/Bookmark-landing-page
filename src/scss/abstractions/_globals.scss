@@ -2,7 +2,7 @@
 @use "../abstractions/mixins";
 
 html {
-    overflow-x: hidden;
+    // overflow-x: hidden;
     &:has(.dialog[open]) {
         overflow: hidden;
     }

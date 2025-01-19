@@ -37,15 +37,17 @@ export default function AccordionItem({ question, answer, index }: props) {
             role="region"
             aria-labelledby={"accordion" + index}
             className="accordion__answer"
-            initial={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, height: 0, paddingBottom: 0 }}
             animate={{
               opacity: 1,
               height: "auto",
+              paddingBottom: 15,
             }}
-            exit={{ opacity: 0, height: 0 }}
+            exit={{ opacity: 0, height: 0, paddingBottom: 0 }}
             transition={{
-              opacity: { duration: 0.4 },
+              // opacity: { duration: 0.4 },
               height: { duration: 0.2 },
+              paddingBottom: { duration: 0.4 },
             }}
           >
             <p>{answer}</p>
